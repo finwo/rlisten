@@ -7,4 +7,4 @@ OBJ  = rlisten.o messages.o
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 rlisten: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS)
