@@ -1,4 +1,19 @@
-CC = gcc
+# Find which C compilers are available
+MGCC = $(shell command -v musl-gcc 2> /dev/null)
+TCC  = $(shell command -v tcc 2> /dev/null)
+GCC  = $(shell command -v gcc 2> /dev/null)
+
+# Choose which to use
+ifdef MGCC
+	CC = musl-gcc
+else ifdef TCC
+	CC = tcc
+else ifdef GCC
+	CC = gcc
+else
+	shell echo "No C compiler found"
+endif
+
 CFLAGS  = -I. -Wall
 DEPS = messages.h
 OBJ  = rlisten.o messages.o
