@@ -96,4 +96,7 @@ rlisten client --agent agent.example.com --identity <client-seed/identity> --nam
 rlisten client --agent agent.example.com --identity <client-seed/identity> --name example.com [--proto ssl:443] --exec executable -- arg [...arg]
 ```
 
-**TODO**: generate more details here
+### Brainstorm
+
+- add quark httpd as static host, so we can say `--docroot /path/to/docs`?
+- consul support (already knows services + hostnames + ports, only need names and/or tags)
